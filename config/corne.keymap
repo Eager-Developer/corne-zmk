@@ -5,31 +5,12 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/keys.h>
 
 / {
     macros {
-        a_grave: a_grave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LEFT_ALT>
-                , <&macro_tap &kp 0 &kp 1 &kp 9 &kp 2>
-                , <&macro_release &kp LEFT_ALT>
-                ;
-        };
-        zed_mk: zed_mk {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp Z &kp M &kp K>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-        a_grv: a_grv {
+        a_capital_grave: a_capital_grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -39,6 +20,82 @@
                 , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N2>
                 , <&macro_release &kp LALT>
                 ;
+        };
+        a_small_grave: a_small_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N4>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        e_capital_grave: e_capital_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N0>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        e_small_grave: e_small_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N2>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        e_capital_acute: e_small_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N1>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        e_small_acute: e_capital_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N3>
+                , <&macro_release &kp LALT>
+                ;
+        };
+    };
+    
+    behaviors {
+        a_grave: a_grave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&a_small_grave>, <&a_capital_grave>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        e_grave: e_grave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&e_small_grave>, <&e_capital_grave>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        e_acute: e_acute {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&e_small_acute>, <&e_capital_acute>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -53,10 +110,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &a_grave  &kp J  &kp O     &zed_mk    &kp B        &kp F    &kp D  &kp L     &kp SINGLE_QUOTE  &kp Q  &kp BSPC
-&kp LCTRL  &kp A     &kp I  &kp E     &kp U    &kp COMMA    &kp P    &kp T  &kp S     &kp R             &kp N  &kp CARET
-&kp LSHFT  &kp K     &kp Y  &a_grv     &kp DOT  &kp W        &kp G    &kp C  &kp M     &kp H             &kp V  &kp Z
-                            &kp LGUI  &mo 1    &kp SPACE    &kp RET  &mo 2  &kp RALT
+&kp TAB    &a_grave  &kp J  &kp O     &e_acute  &kp B            &kp F    &kp D  &kp L     &kp SINGLE_QUOTE  &kp Q  &kp BSPC
+&kp LCTRL  &kp A     &kp I  &kp E     &kp U     &kp COMMA        &kp P    &kp T  &kp S     &kp R             &kp N  &kp CARET
+&kp LSHFT  &kp K     &kp Y  &e_grave  &kp DOT   &kp W            &kp G    &kp C  &kp M     &kp H             &kp V  &kp Z
+                            &kp LGUI  &mo 1     &kp SPACE        &kp RET  &mo 2  &kp RALT
             >;
         };
 
