@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        a_grave: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp N0 &kp N1 &kp N9 &kp N2>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -20,10 +29,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp A  &kp J  &kp O     &kp E    &kp B                &kp F    &kp D  &kp L     &kp SINGLE_QUOTE  &kp Q  &kp BSPC
-&kp LCTRL  &kp A  &kp I  &kp E     &kp U    &kp COMMA            &kp P    &kp T  &kp S     &kp R             &kp N  &kp CARET
-&kp LSHFT  &kp K  &kp Y  &kp E     &kp DOT  &kp W                &kp G    &kp C  &kp M     &kp H             &kp V  &kp Z
-                         &kp LGUI  &mo 1    &kp SPACE            &kp RET  &mo 2  &kp RALT
+&kp TAB    &a_grave  &kp J  &kp O     &kp E    &kp B        &kp F    &kp D  &kp L     &kp SINGLE_QUOTE  &kp Q  &kp BSPC
+&kp LCTRL  &kp A     &kp I  &kp E     &kp U    &kp COMMA    &kp P    &kp T  &kp S     &kp R             &kp N  &kp CARET
+&kp LSHFT  &kp K     &kp Y  &kp E     &kp DOT  &kp W        &kp G    &kp C  &kp M     &kp H             &kp V  &kp Z
+                            &kp LGUI  &mo 1    &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
 
