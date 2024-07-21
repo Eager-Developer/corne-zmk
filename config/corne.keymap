@@ -16,7 +16,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
-                = <&macro_tap &kp ` &kp A>
+                = <&macro_tap &kp GRAVE &kp LS(A)>
                 ;
         };
         a_small_grave: a_small_grave {
@@ -25,7 +25,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
-                = <&macro_tap &kp ` &kp a>
+                = <&macro_tap &kp GRAVE &kp A>
                 ;
         };
         e_capital_grave: e_capital_grave {
@@ -34,7 +34,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
-                = <&macro_tap &kp ` &kp E>
+                = <&macro_tap &kp GRAVE &kp LS(E)>
                 ;
         };
         e_small_grave: e_small_grave {
@@ -43,7 +43,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
-                = <&macro_tap &kp ` &kp e>
+                = <&macro_tap &kp GRAVE &kp E>
                 ;
         };
         e_capital_acute: e_capital_acute {
@@ -52,9 +52,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
-                = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp É>
-                , <&macro_release &kp RALT>
+                = <&macro_tap &sk RALT &sk LSHFT &kp E>
                 ;
         };
         e_small_acute: e_small_acute {
@@ -64,7 +62,7 @@
             tap-ms = <0>;
             bindings
                 = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp é>
+                , <&macro_tap     &kp E>
                 , <&macro_release &kp RALT>
                 ;
         };
@@ -75,8 +73,8 @@
             tap-ms = <0>;
             bindings
                 = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp Ç>
-                , <&macro_release &kp RALT>
+                , <&macro_tap     &kp LS(COMMA)>
+                , <&macro_release &kp RALT &kp LSHFT>
                 ;
         };
         c_small_cedilla: c_small_cedilla {
@@ -85,9 +83,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
-                = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp ç>
-                , <&macro_release &kp RALT>
+                = <&macro_tap &sk RALT &kp COMMA>
                 ;
         };
     };
@@ -132,7 +128,7 @@
             bindings = <
 &kp TAB    &a_grave  &kp J  &kp O     &e_acute  &kp B            &kp F    &kp D  &kp L     &kp SINGLE_QUOTE  &kp Q  &kp BSPC
 &kp LCTRL  &kp A     &kp I  &kp E     &kp U     &kp COMMA        &kp P    &kp T  &kp S     &kp R             &kp N  &kp CARET
-&kp LSHFT  &kp K     &kp Y  &e_grave  &kp DOT   &kp W            &kp G    &kp c_cedilla  &kp M     &kp H             &kp V  &kp Z
+&kp LSHFT  &kp K     &kp Y  &e_grave  &kp DOT   &kp W            &kp G    &c_cedilla  &kp M     &kp H             &kp V  &kp Z
                             &kp LGUI  &mo 1     &kp SPACE        &kp RET  &mo 2  &kp RALT
             >;
         };
