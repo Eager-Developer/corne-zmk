@@ -52,7 +52,9 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
-                = <&macro_tap &sk RALT &sk LSHFT &kp E>
+                = <&macro_press   &kp RALT>
+                , <&macro_tap     &kp LS(E)>
+                , <&macro_release &kp RALT>
                 ;
         };
         e_small_acute: e_small_acute {
@@ -74,7 +76,7 @@
             bindings
                 = <&macro_press   &kp RALT>
                 , <&macro_tap     &kp LS(COMMA)>
-                , <&macro_release &kp RALT &kp LSHFT>
+                , <&macro_release &kp RALT>
                 ;
         };
         c_small_cedilla: c_small_cedilla {
@@ -83,7 +85,9 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
-                = <&macro_tap &sk RALT &kp COMMA>
+                = <&macro_press   &kp RALT>
+                , <&macro_tap     &kp COMMA>
+                , <&macro_release &kp RALT>
                 ;
         };
     };
