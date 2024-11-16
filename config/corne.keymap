@@ -143,6 +143,40 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_a_grave {
+            timeout-ms = <50>;
+            key-positions = <3 4>; // <O É>
+            bindings = <&a_grave>; // À
+        };
+        combo_q {
+            timeout-ms = <50>;
+            key-positions = <7 8>; // <D L>
+            bindings = <&kp Q>; // Q
+        };
+        combo_under {
+            timeout-ms = <50>;
+            key-positions = <26 27>; // <Y È>
+            bindings = <&kp UNDER>; // _
+        };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <27 28>; // <È .>
+            bindings = <&kp MINUS>; // -
+        };
+        combo_c_cedilla {
+            timeout-ms = <50>;
+            key-positions = <31 32>; // <C M>
+            bindings = <&c_cedilla>; // Ç
+        };
+        combo_z {
+            timeout-ms = <50>;
+            key-positions = <32 33>; // <M H>
+            bindings = <&kp Z>; // Z
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
