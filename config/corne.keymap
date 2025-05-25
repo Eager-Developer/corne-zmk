@@ -90,6 +90,16 @@
                 , <&macro_release &kp RALT>
                 ;
         };
+        apos: apos {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_press   &kp APOSTROPHE>
+                , <&macro_tap     &kp SPACE>
+                ;
+        };
     };
     
     behaviors {
@@ -120,7 +130,7 @@
         ap_qm: ap_qm {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp APOSTROPHE>, <&kp QMARK>;
+            bindings = <&apos>, <&kp QMARK>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ca_ex: ca_ex {
