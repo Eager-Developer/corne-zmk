@@ -9,6 +9,45 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_a_grave {
+            timeout-ms = <30>;
+            key-positions = <3 4>;  // O + É
+            bindings = <&a_grave>;
+        };
+        combo_q {
+            timeout-ms = <30>;
+            key-positions = <7 8>;  // D + L
+            bindings = <&kp Q>;
+        };
+        combo_e_grave {
+            timeout-ms = <30>;
+            key-positions = <13 14>;  // Y + -
+            bindings = <&e_grave>;
+        };
+        combo_underscore {
+            timeout-ms = <30>;
+            key-positions = <26 27>;  // Y + È
+            bindings = <&kp UNDER>;
+        };
+        combo_dash {
+            timeout-ms = <30>;
+            key-positions = <27 28>;  // È + .
+            bindings = <&kp MINUS>;
+        };
+        combo_c_cedilla {
+            timeout-ms = <30>;
+            key-positions = <31 32>;  // C + M
+            bindings = <&c_cedilla>;
+        };
+        combo_z {
+            timeout-ms = <30>;
+            key-positions = <32 33>;  // M + H
+            bindings = <&kp Z>;
+        };
+    };
+
     macros {
         a_capital_grave: a_capital_grave {
             compatible = "zmk,behavior-macro";
