@@ -21,11 +21,6 @@
             key-positions = <7 8>;  // D + L
             bindings = <&kp Q>;
         };
-        combo_e_grave {
-            timeout-ms = <30>;
-            key-positions = <13 14>;  // Y + -
-            bindings = <&e_grave>;
-        };
         combo_underscore {
             timeout-ms = <30>;
             key-positions = <26 27>;  // Y + È
