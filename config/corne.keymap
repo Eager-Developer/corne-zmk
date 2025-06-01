@@ -217,10 +217,10 @@
             // CA_EX = carret, exclamation point
 
             bindings = <
-&kp TAB    &a_grave  &kp J  &kp O     &e_acute  &kp B            &kp F               &kp D        &kp L     &ap_qm  &kp Q  &kp BSPC
-&kp LCTRL  &kp A     &kp I  &kp E     &kp U     &co_sc           &kp P               &kp T        &kp S     &kp R   &kp N  &ca_ex
-&kp RET    &kp K     &kp Y  &e_grave  &dt_cl    &kp W            &kp G               &kp C        &kp M     &kp H   &kp V  &kp Z
-                            &kp LGUI  &mo 1     &kp SPACE        &mt_sk LCTRL LSHFT  &key_repeat  &kp RALT
+&kp TAB    &a_grave  &kp J  &kp O     &e_acute  &kp B                  &kp F               &kp D        &kp L     &ap_qm  &kp Q  &kp BSPC
+&kp LCTRL  &kp A     &kp I  &kp E     &kp U     &co_sc                 &kp P               &kp T        &kp S     &kp R   &kp N  &ca_ex
+&kp RET    &kp K     &kp Y  &e_grave  &dt_cl    &kp W                  &kp G               &kp C        &kp M     &kp H   &kp V  &kp Z
+                            &kp LGUI  &mo 1     &mt_sk RALT SPACE      &mt_sk LCTRL LSHFT  &key_repeat  &kp RALT
             >;
         };
 
