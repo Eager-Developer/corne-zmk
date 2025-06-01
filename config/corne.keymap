@@ -47,6 +47,11 @@
             key-positions = <32 33>;  // M + H
             bindings = <&kp Z>;
         };
+        combo_enter {
+            timeout-ms = <30>;
+            key-positions = <16 38>;  // U + SPACE
+            bindings = <&kp ENTER>;
+        };
     };
 
     macros {
