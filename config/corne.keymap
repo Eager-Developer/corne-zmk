@@ -34,7 +34,7 @@
         combo_system { // Bluetooth, OS settings
             timeout-ms = <30>;
             key-positions = <10 11>;  // X + BKSP
-            bindings = <&mo 3>;
+            bindings = <&to 3>;
         };
         combo_q {
             timeout-ms = <30>;
